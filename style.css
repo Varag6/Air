@@ -1,0 +1,43 @@
+.h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: none;
+}
+
+#upperleft {
+  position: absolute;
+  top: 550px;   /* Move up */
+  left: 500px;  /* Move to the left */
+}
+
+#upperright {
+  position: absolute;
+  top: 550px;   /* Move up */
+  left: 1000px; /* Move to the right */
+}
+#lowerleft {
+  position: absolute;
+  top: 600px;  /* Move down */
+  left: 500px;  /* Move to the left */
+}
+
+.textbox {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.data-type {
+  font-weight: bold;
+}
+
+.data-value {
+  font-style: italic;
+}
