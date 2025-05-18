@@ -1,4 +1,4 @@
-<html>
+<!--<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -21,23 +21,60 @@
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       
       <a-entity mindar-image-target="targetIndex: 0" id="targetEntity">
-        <a-plane id="NO2" width="0.4" height="0.1" position="1 -0.1 0.02"></a-plane>
+        <a-plane color="#3CA1AF" width="0.4" height="0.1" position="1 -0.1 0.02"></a-plane>
         <a-text value="NO2" color="#000" width="1.5" position="0.9 -0.1 0"></a-text>
         <a-plane color="#000" opacity="0.2" width="0.4" height="0.2" position="1 -0.2 0.01"></a-plane>
-        <a-text id="NO2_value" value="7 mg" width="1.5" position="0.9 -0.2 0.01"></a-text>
+        <a-text id="NO2_value" value="7 mg/m3" width="1.5" position="0.9 -0.2 0.01"></a-text>
 
-        <a-plane id="pm2" width="0.4" height="0.1" position="-0.9 -0.1 0.02"></a-plane>
-        <a-text value="pm2" color="#000" width="1.5" position="-1 -0.1 0.02" ></a-text>
+        <a-plane color="#3CA1AF" width="0.4" height="0.1" position="-0.9 -0.1 0.02"></a-plane>
+        <a-text value="PM2.5" color="#000" width="1.5" position="-1 -0.1 0.02" ></a-text>
         <a-plane color="#000" opacity="0.2" width="0.4" height="0.2" position="-0.9 -0.2 0.01"></a-plane>
-        <a-text id="pm2_value" value="7 mg" width="1.5" position="-1 -0.2 0.01"></a-text>
+        <a-text id="pm2_value" value="19 mg/m3 " width="1.5" position="-1 -0.2 0.01"></a-text>
         
-        <a-plane id="pm10" width="0.4" height="0.1" position="-0.9 -0.7 0.02"></a-plane>
+        <a-plane color="#3CA1AF" width="0.4" height="0.1" position="-0.9 -0.7 0.02"></a-plane>
         <a-text value="pm10" color="#000" width="1.5" position="-1 -0.7 0.02" ></a-text>
         <a-plane color="#000" opacity="0.2" width="0.4" height="0.2" position="-0.9 -0.8 0.01"></a-plane>
-        <a-text id="pm10_value" value="7 mg" width="1.5" position="-1 -0.8 0.01"></a-text>
+        <a-text value="7 mg/m3" width="1.5" position="-1 -0.8 0.01"></a-text>
+        
+        <a-gltf-model rotation="0 0 0" position="0 0 0.2" scale="0.2 0.2 0.2" src="#airModel"></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>-->
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 2"
+      color-space="sRGB"
+      renderer="colorManagement: true; physicallyCorrectLights: true"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false">
+
+      <a-assets>
+        <a-asset-item id="airModel" src="./assets/airmodel.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-camera 
+        position="0 0 0" 
+        look-controls="enabled: false" 
+      ></a-camera>
+      
+      <a-entity mindar-image-target="targetIndex: 0" id="targetEntity">
+        <a-plane color="#3CA1AF" width="1" height="0.1" position="0 0.3 1.01"></a-plane>
+        <a-text value="Bortle Dark Sky Scale" color="#000" width="1.5" position="-0.4 0.3 1.01" ></a-text>
+        <a-plane color="#fff" width="1.6" height="0.7" position="0.3 0 1"></a-plane>
+        <a-text value="PM2.5 particles are floating particulate matter in the air measuring 2.5 micrometers in diameter or less. PM2.5 is so small it can be absorbed into the bloodstream upon inhalation.  For this reason, it is typically the pollutant posing the greatest health threat.." width="1.5" position="-0.4 0 1.01"></a-text>
         
         <a-gltf-model rotation="0 0 0" position="0 0 0.2" scale="0.2 0.2 0.2" src="#airModel"></a-gltf-model>
       </a-entity>
     </a-scene>
   </body>
 </html>
+
